@@ -12,22 +12,21 @@ int main() {
     int val = 0;
     int count = 0;
 
-    if (card_name[0] == 'K') {
+    /* Can use a switch statement if we are performing
+    checks on one variable*/
+    switch(card_name[0]){
+    case 'K':
+    case 'Q':
+    case 'J':
         val = 10;
-        count -= 1;
-    } else if (card_name[0] == 'Q') {
-        val = 10;
-        count -= 1;
-    } else if (card_name[0] == 'J') {
-        val = 10;
-        count -= 1;
-    } else if (card_name[0] == 'A') {
+        break;
+    case 'A':
         val = 11;
-         count -= 1;
-
-    } else {
+        break;
+    default:
         val = atoi(card_name);
     }
+    
     if (val >= 3 && val <= 6){
        puts("Count has gone up");
     } else if (val == 10) {
